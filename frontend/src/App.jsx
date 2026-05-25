@@ -35,7 +35,7 @@ const [search, setSearch] = useState("");
   try {
 
     const res = await axios.post(
-      "http://localhost:5000/register",
+      "https://college-notes-backend-ouen.onrender.com/register",
       {
         email,
         password,
@@ -81,7 +81,7 @@ const login = async () => {
     // NORMAL USER LOGIN
 
     const res = await axios.post(
-      "http://localhost:5000/login",
+      "https://college-notes-backend-ouen.onrender.com/login",
       {
         email,
         password,
@@ -130,7 +130,7 @@ const forgotPassword = async () => {
   try {
 
     const res = await axios.put(
-      "http://localhost:5000/forgot-password",
+      "https://college-notes-backend-ouen.onrender.com/forgot-password",
       {
         email,
         newPassword,
@@ -151,7 +151,7 @@ const forgotPassword = async () => {
   const getNotes = async () => {
 
     const res = await axios.get(
-      "http://localhost:5000/notes"
+      "https://college-notes-backend-ouen.onrender.com/notes"
     );
 
     setNotes(res.data);
@@ -199,7 +199,7 @@ formData.append("file", file);
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/upload",
+        "https://college-notes-backend-ouen.onrender.com/upload",
         formData
       );
 
@@ -221,7 +221,7 @@ formData.append("file", file);
   const deleteNote = async (id) => {
 
     await axios.delete(
-      `http://localhost:5000/delete/${id}`        
+      `https://college-notes-backend-ouen.onrender.com/delete/${id}`        
     );
 
     getNotes();
@@ -438,7 +438,7 @@ const logout = () => {
 )}
 
         <a
-  href={`http://localhost:5000/uploads/${note.file}`}
+  href={`https://college-notes-backend-ouen.onrender.com/uploads/${note.file}`}
   download
   className="downloadBtn"
 >
