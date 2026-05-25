@@ -11,6 +11,10 @@ const User = require("./models/user");
 const Note = require("./models/Note");
 
 const app = express();
+app.use(cors({
+    origin: "https://college-notes-platform-eight.vercel.app",
+    credentials: true
+}))
 
 connectDB();
 
