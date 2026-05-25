@@ -80,57 +80,44 @@ app.post("/register", async (req, res) => {
 // ================= LOGIN =================
 
 app.post("/login", async (req, res) => {
-
   try {
-
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
 
     if (!user) {
-
       return res.status(400).json({
         message: "User not found",
       });
-
     }
 
-    const match = await bcrypt.compare(
-      password,
-      user.password
-    );
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    if (!match) {
-
+    if (!isMatch) {
       return res.status(400).json({
-        message: "Invalid Password",
+        message: "Invalid password",
       });
-
     }
 
     const token = jwt.sign(
       { id: user._id },
-      "secretkey"
+      "SECRET_KEY",
+      { expiresIn: "1d" }
     );
 
     res.json({
       token,
-      message: "Login Successful",
+      user,
     });
 
   } catch (error) {
-
     console.log(error);
 
     res.status(500).json({
-      message: "Server Error",
+      error: error.message,
     });
-
   }
-
 });
-
-
 // ================= FORGOT PASSWORD =================
 
 app.put("/forgot-password", async (req, res) => {
