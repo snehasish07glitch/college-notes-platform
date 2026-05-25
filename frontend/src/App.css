@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  font-family: Arial;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.authBox,
+.uploadBox {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.btns {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: blue;
+  color: white;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.searchBar {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+.downloadBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-top: 10px;
+}
